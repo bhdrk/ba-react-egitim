@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Redirect, Route} from 'react-router-dom'
+
+import ProductListPage from "./pages/product/ProductList";
+import ProductDetailsPage from "./pages/product/ProductDetails";
+import RegisterPage from "./pages/register/RegisterPage";
+import {Provider} from "react-redux";
+import BasketPage from "./pages/basket/Basket";
+import {Store} from "./Store";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <Provider store={Store}>
+                <Redirect to="/list" from="/" exact/>
+                <Route path="/list"
+                       component={ProductListPage}/>
+                <Route path="/details/:productId"
+                       component={ProductDetailsPage}/>
+                <Route path="/register"
+                       component={RegisterPage}/>
+                <Route path="/basket"
+                       component={BasketPage}/>
+            </Provider>
+        </BrowserRouter>
+    );
 }
 
 export default App;

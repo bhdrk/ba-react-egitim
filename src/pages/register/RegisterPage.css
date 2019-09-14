@@ -1,0 +1,19 @@
+.registerForm {
+    display: flex;
+    flex-direction: column;
+}
+.registerForm h1 {
+    text-align: center;
+}
+
+.registerForm div {
+    margin: auto;
+    padding: 10px;
+}
+
+.registerForm div label {
+    display: inline-block;
+    width: 250px;
+    text-align: right;
+}
+

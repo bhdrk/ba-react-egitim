@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    padding: 20px;
+    background: orange;
+}
+
+.logo {
+    flex: 1 1 auto;
+}
+
+.basket {
+    flex: 0 1 auto;
+}

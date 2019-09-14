@@ -1,0 +1,14 @@
+.productWrapper {
+    flex: 1 1 auto;
+    display: flex;
+    height: 150px;
+    flex-grow: 0;
+}
+
+.productDetail {
+    flex-basis: 100%;
+    border: 1px solid orange;
+    padding: 50px;
+    margin: 5px;
+    text-align: center;
+}

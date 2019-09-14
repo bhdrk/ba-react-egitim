@@ -3,14 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-redux": "^7.1.1",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.1.1",
+    "redux": "^4.0.4"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.0.1",
+    "json-server": "^0.15.1",
+    "faker": "^4.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "npx env-cmd -f config/dev.env react-scripts start",
+    "build:test": "npx env-cmd -f config/test.env react-scripts build",
+    "build:prod": "npx env-cmd -f config/prod.env react-scripts build",
     "test": "react-scripts test",
+    "mock-server": "npx json-server test/mockData.js --port 1234",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
